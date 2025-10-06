@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Note Pilot — AI Assisted Notes</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <script src="https://js.puter.com/v2/"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Note<span>Pilot</span></div>
+    <div class="controls">
+      <input id="search-input" type="search" placeholder="Search notes, topics..." />
+      <label class="toggle">
+        <input id="dark-toggle" type="checkbox" />
+        <span>Dark</span>
+      </label>
+    </div>
+  </header>
+
+  <main class="main-grid">
+    <section class="left-panel">
+      <div class="compose">
+        <input id="topic-input" placeholder="Type a topic and press Enter (eg. Photosynthesis)" />
+        <div id="loader" class="loader" aria-hidden="true" style="display:none"></div>
+        <div class="hint">Tip: Press Enter to fetch AI suggestion. Accept to save and edit.</div>
+      </div>
+
+      <div id="notes-container" class="notes-list" aria-live="polite"></div>
+    </section>
+
+    <aside class="right-panel">
+      <div class="panel-card">
+        <h3>Saved Notes</h3>
+        <div id="saved-notes" class="saved-grid"></div>
+      </div>
+
+      <div class="panel-card small">
+        <h4>Actions</h4>
+        <button id="clear-all" class="btn-ghost">Clear All Notes</button>
+        <p class="muted">Notes are stored in your browser's localStorage. Use the server proxy for real AI responses.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">Developed by Yash Agrahari </footer>
+
+  <script src="aiService.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
